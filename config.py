@@ -23,7 +23,7 @@ class Config:
     # 2. PostgreSQL: SQLALCHEMY_DATABASE_URI='postgresql://user:password@host:port/database_name'
     # 3. Azure Cosmos DB (PostgreSQL API): SQLALCHEMY_DATABASE_URI='postgresql://user:password@host:port/database_name'
     #    (Note: The connection string for Cosmos DB's PostgreSQL API will look like a standard PostgreSQL string)
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///site.db'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///site.db'
     
     # Disable SQLAlchemy event system to save memory, as we don't need it for this simple app
     SQLALCHEMY_TRACK_MODIFICATIONS = False
