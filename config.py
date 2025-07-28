@@ -7,7 +7,7 @@ class Config:
     # IMPORTANT: In a production environment, this should be a strong, randomly generated string
     # and ideally loaded from an environment variable or a secure secret management system.
     key_vault_name = "britedge-kv"
-    KVUri = f"https://bitedge-kv.vault.azure.net"
+    KVUri = f"https://britedge-kv.vault.azure.net"
     
     credential = DefaultAzureCredential()
     client = SecretClient(vault_url=KVUri, credential=credential)
