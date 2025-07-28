@@ -13,6 +13,8 @@ load_dotenv()
 app = Flask(__name__)
 # Load configuration from Config class
 app.config.from_object(Config)
+print("Connecting to DB:", app.config["SQLALCHEMY_DATABASE_URI"])
+
 
 # Initialise SQLAlchemy with the Flask app
 db.init_app(app)
@@ -41,5 +43,5 @@ def inject_now():
     return {'now': datetime.now(timezone.utc)}
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 8080))
     app.run(debug=False, host='0.0.0.0', port=port)
